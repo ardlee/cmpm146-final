@@ -29,15 +29,15 @@ public class NavigationScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player touched by GameObject");
-            Invoke("GameOver", 0.1f);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Debug.Log("Player touched by GameObject");
+    //        Invoke("GameOver", 0.1f);
            
-        }
-    }
+    //    }
+    //}
 
     void GameOver()
     {
