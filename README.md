@@ -1,7 +1,7 @@
 # cmpm146-final
 
-'WASD' to steer
-'SPACE' to brake
-'SHIFT' to switch cameras
-'ESC' to pause
+'WASD' to steer <br>
+'SPACE' to brake <br>
+'SHIFT' to switch cameras <br>
+'ESC' to pause <br>
 Find and get to the safe point before getting busted
