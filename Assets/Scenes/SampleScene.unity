@@ -56650,6 +56650,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967306027}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &968279295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031278682792168204, guid: e02741469ced7e04a89e037590383987, type: 3}
+  m_PrefabInstance: {fileID: 4693761305438840201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &975095507
 GameObject:
   m_ObjectHideFlags: 0
@@ -69875,6 +69880,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200351751}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1201671185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201671188}
+  - component: {fileID: 1201671187}
+  - component: {fileID: 1201671186}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1201671186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201671185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7c51176a33e66478ccce990e21cd7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 968279295}
+  spawnRadius: 10
+  timerDuration: 5
+--- !u!65 &1201671187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201671185}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 255.05722, y: 13.31, z: 197.7}
+  m_Center: {x: 8.086533, y: 2.3958273, z: 1.0854187}
+--- !u!4 &1201671188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201671185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.3, y: 3.91, z: -105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201818023
 GameObject:
   m_ObjectHideFlags: 0
@@ -95003,7 +95077,7 @@ GameObject:
   - component: {fileID: 1568551176}
   - component: {fileID: 1568551178}
   - component: {fileID: 1568551177}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107351,7 +107425,7 @@ GameObject:
   - component: {fileID: 1760660884}
   - component: {fileID: 1760660886}
   - component: {fileID: 1760660885}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129806,7 +129880,7 @@ GameObject:
   - component: {fileID: 8867414629724502600}
   - component: {fileID: 5781261448274324805}
   - component: {fileID: 8359333503258783869}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129837,7 +129911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6276862911233633600}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129853,7 +129927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2619875549198632742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130074,7 +130148,7 @@ GameObject:
   - component: {fileID: 3468226985659553124}
   - component: {fileID: 7841479333058550789}
   - component: {fileID: 6464871119947396827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RearLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130098,7 +130172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6044902816213792042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130307,7 +130381,7 @@ GameObject:
   - component: {fileID: 4795325904090848376}
   - component: {fileID: 6319764420556262922}
   - component: {fileID: 4579023644239794369}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130324,7 +130398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2498768698594574552}
   - component: {fileID: 7644806520831631468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130519,7 +130593,7 @@ GameObject:
   - component: {fileID: 3303701725805168917}
   - component: {fileID: 8469340905901699077}
   - component: {fileID: 3490922793270830207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spoiler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130604,7 +130678,7 @@ GameObject:
   - component: {fileID: 7573636335057430723}
   - component: {fileID: 7573636335057430724}
   - component: {fileID: 7573636335057430725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -130621,7 +130695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2725618939934645934}
   - component: {fileID: 949030218905645707}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130679,7 +130753,7 @@ GameObject:
   - component: {fileID: 4498140614983246027}
   - component: {fileID: 5565475003838527503}
   - component: {fileID: 4737534432684902295}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -130771,7 +130845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858274048788176928}
   - component: {fileID: 4686549795899802169}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RearRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130886,7 +130960,7 @@ GameObject:
   - component: {fileID: 5746803361362164295}
   - component: {fileID: 5514413412197983858}
   - component: {fileID: 3053368975708002887}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RearRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130903,7 +130977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4133583376326405664}
   - component: {fileID: 7206662872897164574}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RearLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130941,3 +131015,4 @@ SceneRoots:
   - {fileID: 2109669747}
   - {fileID: 6718116898942777007}
   - {fileID: 1909056195}
+  - {fileID: 1201671188}
