@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c766e549f0b3b43829b46420431113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VictoryUI: {fileID: 0}
+  VictoryUI: {fileID: 6290930270339505562, guid: d716dc6bdecc5ed429cd662fdb6c71e8, type: 3}
