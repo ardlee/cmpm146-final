@@ -52,15 +52,26 @@ public class EnemySpawner : MonoBehaviour
         // Generate a random point within a spawnRadius
         Vector3 randomPoint = transform.position + Random.insideUnitSphere * spawnRadius;
 
-        // Attempt to find a valid position on the NavMesh
-        if (NavMesh.SamplePosition(randomPoint, out navMeshHit, spawnRadius, NavMesh.AllAreas))
+        // Check if the spawn position is clear of obstacles
+        if (!Physics.CheckSphere(randomPoint, 1f))
         {
-            // Spawn the object at the valid NavMesh position
-            Instantiate(objectToSpawn, navMeshHit.position, Quaternion.identity);
+            // Attempt to find a valid position on the NavMesh
+            if (NavMesh.SamplePosition(randomPoint, out navMeshHit, spawnRadius, NavMesh.AllAreas))
+            {
+                // Set the Y coordinate to 0 (ground level)
+                navMeshHit.position = new Vector3(navMeshHit.position.x, 5f, navMeshHit.position.z);
+
+                // Spawn the object at the valid NavMesh position
+                Instantiate(objectToSpawn, navMeshHit.position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.LogWarning("Failed to find a valid position on the NavMesh.");
+            }
         }
         else
         {
-            Debug.LogWarning("Failed to find a valid position on the NavMesh.");
+            Debug.LogWarning("Spawn position is obstructed.");
         }
     }
 }
