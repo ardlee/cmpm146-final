@@ -9,11 +9,13 @@ public class TaskGoToTarget : Node
 {
     private Transform _transform;
     private NavMeshAgent _agent;
+    private AgentLineRenderer _agentLineRenderer;
 
-    public TaskGoToTarget(Transform transform, NavMeshAgent agent)
+    public TaskGoToTarget(Transform transform, NavMeshAgent agent, AgentLineRenderer agentLineRenderer)
     {
         _transform = transform;
         _agent = agent;
+        _agentLineRenderer = agentLineRenderer;
     }
 
     public override NodeState Evaluate()
@@ -30,6 +32,7 @@ public class TaskGoToTarget : Node
                 _agent.destination = target.position;
             }
         }
+        _agentLineRenderer.DrawPath(_agent.path);
 
         state = NodeState.RUNNING;
         return state;

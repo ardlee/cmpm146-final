@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-   public NavMeshAgent agent; 
+    public NavMeshAgent agent;
+    public AgentLineRenderer pathLine;
 
     void Update()
     {
@@ -15,5 +16,7 @@ public class PlayerController : MonoBehaviour
                 agent.SetDestination(hitInfo.point);
             }
         }
+        // Draw the new path as we move along it.
+        pathLine.DrawPath(agent.path);
     }
 }

@@ -11,6 +11,7 @@ public class PoliceBT : BehaviorTree.Tree
     public static float fovRange = 600f;
     public static float attackRange = 1f;
     public NavMeshAgent agent;
+    public AgentLineRenderer agentLineRenderer;
     protected override Node SetupTree()
     {
         Node root = new Selector(new List<Node>
@@ -18,7 +19,7 @@ public class PoliceBT : BehaviorTree.Tree
             new Sequence(new List<Node>
             {
                 new CheckEnemyInFOVRange(transform),
-                new TaskGoToTarget(transform, agent),
+                new TaskGoToTarget(transform, agent, agentLineRenderer),
             }),
             new TaskPatrol(transform, waypoints),
         });
