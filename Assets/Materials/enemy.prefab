@@ -926,6 +926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4898d21a18f3646af418b365114052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal: {fileID: 0}
+  lineStartColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!120 &9203690825029985583
 LineRenderer:
   serializedVersion: 2
