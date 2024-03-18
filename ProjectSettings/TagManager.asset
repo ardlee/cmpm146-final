@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Ground
+  - VictoryHitbox
   layers:
   - Default
   - TransparentFX

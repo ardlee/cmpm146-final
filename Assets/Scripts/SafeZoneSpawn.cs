@@ -5,13 +5,14 @@ public class SafeZoneSpawn : MonoBehaviour
     public GameObject objectToSpawn;
     public float spawnRadius = 10f;
     public LayerMask groundLayer;
+    public GameObject goal;
 
     void Start()
     {
-        SpawnObject();
+        goal = SpawnObject();
     }
 
-    void SpawnObject()
+    private GameObject SpawnObject()
     {
         // Generate a random point within a spawnRadius
         Vector3 randomPoint = transform.position + Random.insideUnitSphere * spawnRadius;
@@ -21,7 +22,8 @@ public class SafeZoneSpawn : MonoBehaviour
         if (Physics.Raycast(randomPoint, Vector3.down, out hit, Mathf.Infinity, groundLayer))
         {
             // Spawn the object at the hit point
-            Instantiate(objectToSpawn, hit.point, Quaternion.identity);
+            return Instantiate(objectToSpawn, hit.point, Quaternion.identity);
         }
+        return Instantiate(objectToSpawn, new Vector3(1000, 1000, 1000), Quaternion.identity);
     }
 }

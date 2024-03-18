@@ -24,11 +24,12 @@ public class AgentLineRenderer : MonoBehaviour
         goal = null;
     }
     // Use this function for the player to draw the line but not move according to the agent.
-    public void getPath()
+    public void getPath(Transform start)
     {
         // Don't draw a path if we don't have a goal.
         if (goal == null) { return; }
-        line.SetPosition(0, transform.position); //set the line's origin
+        Debug.Log($"{start.position} {goal.position}");
+        line.SetPosition(0, start.position); //set the line's origin
 
         agent.SetDestination(goal.position); //create the path
         DrawPath(agent.path);

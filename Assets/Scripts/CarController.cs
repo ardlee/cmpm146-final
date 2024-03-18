@@ -36,6 +36,11 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
+    [Header("Agent")]
+    [SerializeField] private AgentLineRenderer agent;
+    [SerializeField] private SafeZoneSpawn safeZoneSpawner;
+    
+
     private void FixedUpdate()
     {
         GetInput();
@@ -115,6 +120,11 @@ public class CarController : MonoBehaviour
                 Invoke("GameOver",2f);
             }
         }
+        if (agent.goal == null)
+        {
+            agent.goal = safeZoneSpawner.goal.transform;
+        }
+        agent.getPath(transform);
     }
 
     void GameOver()

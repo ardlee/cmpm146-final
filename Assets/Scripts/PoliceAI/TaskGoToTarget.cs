@@ -26,7 +26,7 @@ public class TaskGoToTarget : Node
         {
             float distanceToPlayer = Vector3.Distance(_transform.position, target.position);
 
-            Debug.Log($"Going to target! {distanceToPlayer} {target.position}");
+            //Debug.Log($"Going to target! {distanceToPlayer} {target.position}");
             if (distanceToPlayer <= PoliceBT.fovRange)
             {
                 _agent.destination = target.position;
