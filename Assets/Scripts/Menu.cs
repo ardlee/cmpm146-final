@@ -40,5 +40,9 @@ public class Menu : MonoBehaviour
         //StartCoroutine(ConfirmationBox());
     }
 
+    public void OnDemoButton () {
+        SceneManager.LoadScene(2);
+    }
+
 
 }
