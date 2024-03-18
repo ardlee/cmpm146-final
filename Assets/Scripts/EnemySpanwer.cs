@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public float timerDuration = 5f; // Duration in seconds
     private float timer; // Timer to track elapsed time
     private bool playerPresent = false; // Flag to check if player is present
-
+    private NavMeshHit navMeshHit;
 
     void Update()
     {
@@ -32,7 +33,6 @@ public class EnemySpawner : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerPresent = true;
-
         }
     }
 
@@ -52,7 +52,15 @@ public class EnemySpawner : MonoBehaviour
         // Generate a random point within a spawnRadius
         Vector3 randomPoint = transform.position + Random.insideUnitSphere * spawnRadius;
 
-        // Spawn the object at the random point
-        Instantiate(objectToSpawn, randomPoint, Quaternion.identity);
+        // Attempt to find a valid position on the NavMesh
+        if (NavMesh.SamplePosition(randomPoint, out navMeshHit, spawnRadius, NavMesh.AllAreas))
+        {
+            // Spawn the object at the valid NavMesh position
+            Instantiate(objectToSpawn, navMeshHit.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Failed to find a valid position on the NavMesh.");
+        }
     }
 }
